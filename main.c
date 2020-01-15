@@ -6,7 +6,6 @@ void decodiere(FILE *geheim, FILE *goodpad, FILE *ausgabe){
     int a,b;
     if(geheim == NULL || goodpad == NULL || ausgabe == NULL){
         printf("konnte datei nicht oeffnen\n");
-        return 1;
     }
     else{
         while(1){
@@ -46,6 +45,9 @@ int main(int argc, char* argv[]) {
     }
 
     decodiere(geheim, goodpad, ausgabe);
-
+    fclose(geheim);
+    fclose(goodpad);
+    fclose(ausgabe);
+    printf("Fertig!");
     return 0;
 }
